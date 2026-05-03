@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using BatidaPerfeita.Models;
+using BatidaPerfeita.Models.ViewModels;
 
 namespace BatidaPerfeita.Controllers;
 
@@ -14,11 +14,6 @@ public class HomeController : Controller
     }
 
     public IActionResult Index()
-    {
-        return View();
-    }
-
-    public IActionResult Privacy()
     {
         return View();
     }

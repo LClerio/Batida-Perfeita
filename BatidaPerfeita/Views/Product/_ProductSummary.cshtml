@@ -1,0 +1,38 @@
+﻿@model Product
+
+<div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+    <div class="card h-100 shadow sm mb-3">
+        <img src="@Model.ImageUrl" class="card-img-top img-fluid p-3"
+             style="height:250px; object-fit:contain;" />
+
+        <div class="card-body d-flex flex-column">
+
+            <h5 class="card-title text-truncate">
+                <a asp-controller="Produto"
+                   asp-action="Details"
+                   asp-route-productId="@Model.ProductId"
+                   class="text-decoration-none text-dark">
+                    @Model.Name
+                </a>
+            </h5>
+
+            <p class="card-text text-muted small">
+                @Model.ShortDescription
+            </p>
+
+            <div class="mt-auto">
+                <h6 class="text-success f2-bold">
+                    @Model.Price.ToString("c")
+                </h6>
+
+                <a class="btn btn-primary 2-100 mt-2"
+                   asp-controller="CarrinhoCompra"
+                   asp-action="AdicionarItemNoCarrinhoCompra"
+                   asp-route-productId="@Model.ProductId">
+                    🛒 Incluir no Carrinho
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

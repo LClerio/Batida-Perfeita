@@ -1,0 +1,67 @@
+﻿@model ProductListViewModel
+
+<div class="container-fluid px-0">
+    <div class="row g-5">
+        <div class="col-3 sidebar bg-light min-vh-100 p-4 border-end shadow-sm">
+            <div class="card-body">
+                <partial name="_FilterProduct" for="@Model" />
+            </div>
+        </div>
+
+        <div class="col-9">
+            @*A Direita*@
+            <div>
+                <div class="row">
+
+                    @foreach (var category in Model.Categories)
+                    {
+                        <partial name="_CategorySummary" for="@category" />
+                    }
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-center">@Model.CurrentCategory</h2>
+                <hr />
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center gap-3 mt-1 mb-5">
+
+                @* Botão Anterior *@
+                @if (Model.PageNumber > 1)
+                {
+                    <a class="btn btn-outline-primary rounded-pill px-4 shadow-sm fw-semibold d-flex align-items-center gap-2"
+                       href="?pageNumber=@(Model.PageNumber - 1)&pageSize=@Model.PageSize&categoryName=@Model.SelectCategory">
+                        <i class="bi bi-arrow-left"></i>
+                        Anterior
+                    </a>
+                }
+
+                @* Info da página *@
+                <span class="fw-semibold text-secondary">
+                    Página <span class="text-primary">@Model.PageNumber</span> de @Model.TotalPages
+                </span>
+
+                @* Botão Próxima *@
+                @if (Model.PageNumber < Model.TotalPages)
+                {
+                    <a class="btn btn-primary rounded-pill px-4 shadow-sm fw-semibold d-flex align-items-center gap-2"
+                       href="?pageNumber=@(Model.PageNumber + 1)&pageSize=@Model.PageSize&categoryName=@Model.SelectCategory">
+                        Próxima
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                }
+            </div>
+
+            <div>
+                <div class="row">
+                    @foreach (var product in Model.Products)
+                    {
+                        <partial name="_ProductSummary" for="@product" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

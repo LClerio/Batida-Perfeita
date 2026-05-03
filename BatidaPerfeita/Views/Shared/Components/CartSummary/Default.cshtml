@@ -1,0 +1,19 @@
+﻿@model CartViewModel
+
+<li class="nav-item">
+    <a class="nav-link text-light d-flex align-items-center"
+       asp-controller="Cart"
+       asp-action="Index"
+       title="Ver Carrinho">
+
+        <i class="bi bi-cart4 fs-4"></i>
+
+        @{
+            var totalItens = Model.Cart?.CartItems?.Sum(x => x.Quantity) ?? 0;
+        }
+
+        <span class="ms-2 fw-bold" style="color: #f39c12; font-size: 1.2rem;">
+            @totalItens
+        </span>
+    </a>
+</li>

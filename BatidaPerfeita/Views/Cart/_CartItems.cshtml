@@ -1,0 +1,45 @@
+﻿@model CartViewModel
+
+<table class="table table-hover align-middle">
+    <thead class="table-light">
+        <tr>
+            <th>Produto</th>
+            <th class="text-center">Quantidade</th>
+            <th class="text-end">Preço</th>
+            <th class="text-end">Subtotal</th>
+            <th class="text-center">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Cart.CartItems)
+        {
+            <tr>
+                <td>
+                    <strong>@item.Product.Name</strong>
+                </td>
+                <td class="text-center">
+                    <span class="badge bg-secondary">@item.Quantity</span>
+                </td>
+                <td class="text-end">@item.Product.Price.ToString("C")</td>
+                <td class="text-end">
+                    @((item.Quantity * item.Product.Price).ToString("C"))
+                </td>
+                <td class="text-center">
+                    <div class="btn-group" role="group">
+                        <a asp-controller="Cart" asp-action="AddToCart" asp-route-productId="@item.Product.ProductId"
+                           class="btn btn-sm btn-outline-success">+</a>
+                        <a asp-controller="Cart" asp-action="RemoveFromCart" asp-route-productId="@item.Product.ProductId"
+                           class="btn btn-sm btn-outline-danger">-</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr class="table-light">
+            <td colspan="3" class="text-end"><strong>Total:</strong></td>
+            <td class="text-end text-success"><strong>@Model.CartTotal.ToString("C")</strong></td>
+            <td></td>
+        </tr>
+    </tfoot>
+</table>

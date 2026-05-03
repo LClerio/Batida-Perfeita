@@ -1,0 +1,36 @@
+﻿@model CartViewModel
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-4"><i class="bi bi-cart4"></i> Seu Carrinho de Compras</h2>
+        </div>
+    </div>
+
+    @if (Model.Cart.CartItems.Any())
+    {
+        <div class="card shadow-sm">
+            <div class="card-body">
+
+                <partial name="_CartItems" model="Model" />
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-controller="Cart" asp-action="ClearCart" class="btn btn-outline-danger">
+                        <i class="bi bi-trash"></i> Limpar Carrinho
+                    </a>
+                    <div>
+                        <a asp-controller="Product" asp-action="Index" class="btn btn-secondary">Continuar Comprando</a>
+                        <a asp-controller="Order" asp-action="Checkout" class="btn btn-success">Finalizar Pedido</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    } else
+    {
+        <div class="alert alert-info text-center py-5">
+            <h4>Seu carrinho está vazio!</h4>
+            <p>Que tal dar uma olhada nos nossos instrumentos?</p>
+            <a asp-controller="Product" asp-action="Index" class="btn btn-primary mt-3">Ver Produtos</a>
+        </div>
+    }
+</div>

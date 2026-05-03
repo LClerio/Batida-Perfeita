@@ -20,3 +20,29 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.sidebar {
+    background: linear-gradient(180deg, #f8f9fa, #eef1f4);
+    border-right: 1px solid #dee2e6;
+}
+
+    .sidebar .card {
+        border-radius: 12px;
+    }
+
+.category-card {
+    background-color: #000;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+    .category-card:hover {
+        background: linear-gradient(to bottom, #000000, #4a4a4a);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .category-card h6 {
+        font-family: 'Ariel', sans-serif;
+        letter-spacing: 1px;
+    }

@@ -1,4 +1,4 @@
-namespace BatidaPerfeita.Models;
+namespace BatidaPerfeita.Models.ViewModels;
 
 public class ErrorViewModel
 {

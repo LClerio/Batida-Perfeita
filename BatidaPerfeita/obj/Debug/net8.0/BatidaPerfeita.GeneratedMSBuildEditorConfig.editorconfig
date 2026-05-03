@@ -22,12 +22,40 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/temp/ws-ASP.NET/Portfolio/Loja Virtual com ASP.NET Core MVC e Identity/BatidaPerfeita/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/temp/ws-ASP.NET/Portfolio/Loja Virtual com ASP.NET Core MVC e Identity/BatidaPerfeita/Views/Cart/_CartItems.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxfQ2FydEl0ZW1zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/temp/ws-ASP.NET/Portfolio/Loja Virtual com ASP.NET Core MVC e Identity/BatidaPerfeita/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/temp/ws-ASP.NET/Portfolio/Loja Virtual com ASP.NET Core MVC e Identity/BatidaPerfeita/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/temp/ws-ASP.NET/Portfolio/Loja Virtual com ASP.NET Core MVC e Identity/BatidaPerfeita/Views/Home/_Carousel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQ2Fyb3VzZWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/temp/ws-ASP.NET/Portfolio/Loja Virtual com ASP.NET Core MVC e Identity/BatidaPerfeita/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/temp/ws-ASP.NET/Portfolio/Loja Virtual com ASP.NET Core MVC e Identity/BatidaPerfeita/Views/Product/_CategorySummary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxfQ2F0ZWdvcnlTdW1tYXJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/temp/ws-ASP.NET/Portfolio/Loja Virtual com ASP.NET Core MVC e Identity/BatidaPerfeita/Views/Product/_FilterProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxfRmlsdGVyUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/temp/ws-ASP.NET/Portfolio/Loja Virtual com ASP.NET Core MVC e Identity/BatidaPerfeita/Views/Product/_ProductSummary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxfUHJvZHVjdFN1bW1hcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/temp/ws-ASP.NET/Portfolio/Loja Virtual com ASP.NET Core MVC e Identity/BatidaPerfeita/Views/Shared/Components/CartSummary/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2FydFN1bW1hcnlcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/temp/ws-ASP.NET/Portfolio/Loja Virtual com ASP.NET Core MVC e Identity/BatidaPerfeita/Views/Shared/Error.cshtml]
