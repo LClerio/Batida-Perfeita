@@ -427,3 +427,8 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+# SQLite temporários e bancos locais
+*.db-shm
+*.db-wal
+# Opcional: ignore o .db se quiser que o Azure crie um do zero
+# *.db
