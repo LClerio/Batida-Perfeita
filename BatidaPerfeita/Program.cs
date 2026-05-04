@@ -21,6 +21,7 @@ builder.Services.AddScoped<SeedInitialData>();
 builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<ICartRepository, CartRepository>();
+
 builder.Services.AddTransient<IProductService, ProductService>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
