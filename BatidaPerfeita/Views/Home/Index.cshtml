@@ -1,7 +1,44 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model ProductListViewModel
 
 <div class="text-center">
     <partial name="_Carousel" />
+</div>
+
+<br />
+<hr />
+<h2 class="text-center">Em Destaque</h2>
+<br />
+<hr />
+
+<div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        @{
+            var preferredProducts = Model.Products.Where(p => p.IsPreferredProduct).ToList();
+            var itemsPerSlide = 3;
+        }
+
+        @for (int i = 0; i < preferredProducts.Count; i += itemsPerSlide)
+        {
+            <div class="carousel-item @(i == 0 ? "active" : "")">
+                <div class="container">
+                    <div class="row">
+                        @foreach (var product in preferredProducts.Skip(i).Take(itemsPerSlide))
+                        {
+                            <partial name="_PreferredProducts" model="product" />
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Controles (Setinhas) -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+    </button>
 </div>

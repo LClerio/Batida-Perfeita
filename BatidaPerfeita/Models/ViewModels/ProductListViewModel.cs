@@ -8,11 +8,12 @@
         public string SelectCategory { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
 
-        public int PageNumber { get; set; }
+        public int PageNumber { get; set; } = 1;
         public int PageSize { get; set; }
         public int TotalItems { get; set; }
 
-        public int TotalPages => (int)Math.Ceiling((double)TotalItems / PageSize);
+        public int TotalPages => PageSize > 0
+            ? (int)Math.Ceiling((double)TotalItems / PageSize) : 1;
 
 
     }

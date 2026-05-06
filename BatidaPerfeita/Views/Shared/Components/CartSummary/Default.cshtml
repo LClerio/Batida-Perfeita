@@ -6,7 +6,7 @@
        asp-action="Index"
        title="Ver Carrinho">
 
-        <i class="bi bi-cart4 fs-4"></i>
+        <i class="bi bi-cart4 fs-2"></i>
 
         @{
             var totalItens = Model.Cart?.CartItems?.Sum(x => x.Quantity) ?? 0;

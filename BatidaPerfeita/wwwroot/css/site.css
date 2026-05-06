@@ -18,6 +18,7 @@ html {
 }
 
 body {
+    padding-top: 150px;
   margin-bottom: 60px;
 }
 
@@ -46,3 +47,31 @@ body {
         font-family: 'Ariel', sans-serif;
         letter-spacing: 1px;
     }
+
+/* Ajusta as setas para ficarem fora dos cards e visíveis */
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+    filter: invert(100%); /* Torna as setas escuras se o fundo for claro */
+}
+
+.carousel-control-prev {
+    left: -50px; /* Joga a seta um pouco para fora do container */
+}
+
+.carousel-control-next {
+    right: -50px;
+}
+
+/* Garante que o container tenha espaço para as setas */
+.carousel {
+    padding: 0 40px;
+}
+
+.custom-search {
+    margin-top:15px;
+    max-width: 500px;
+    width: 1000px;
+    height: 50px;
+    border-radius: 30px;
+    overflow: hidden;
+}

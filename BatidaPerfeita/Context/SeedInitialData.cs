@@ -58,7 +58,7 @@ namespace BatidaPerfeita.Context
                 Price = 18999.90m,
                 ImageUrl = "img/Guitarra/imagemtest.png",
                 ImageThumbnailUrl = "img/Guitarra/imagemtest.png",
-                IsPreferredProduct = false,
+                IsPreferredProduct = true,
                 InStock = true
             };
             Product Guitarra03 = new Product
@@ -72,7 +72,7 @@ namespace BatidaPerfeita.Context
                 Price = 9999.90m,
                 ImageUrl = "img/Guitarra/imagemtest.png",
                 ImageThumbnailUrl = "img/Guitarra/imagemtest.png",
-                IsPreferredProduct = false,
+                IsPreferredProduct = true,
                 InStock = true
             };
             Product Guitarra04 = new Product
@@ -247,7 +247,7 @@ namespace BatidaPerfeita.Context
                 Price = 8999.90m,
                 ImageUrl = "img/Baixo/imagemtest.png",
                 ImageThumbnailUrl = "img/Baixo/imagemtest.png",
-                IsPreferredProduct = false,
+                IsPreferredProduct = true,
                 InStock = true
             };
             Product Baixo02 = new Product
@@ -261,7 +261,7 @@ namespace BatidaPerfeita.Context
                 Price = 4599.90m,
                 ImageUrl = "img/Baixo/imagemtest.png",
                 ImageThumbnailUrl = "img/Baixo/imagemtest.png",
-                IsPreferredProduct = false,
+                IsPreferredProduct = true,
                 InStock = true
             };
             Product Baixo03 = new Product
@@ -275,7 +275,7 @@ namespace BatidaPerfeita.Context
                 Price = 2999.90m,
                 ImageUrl = "img/Baixo/imagemtest.png",
                 ImageThumbnailUrl = "img/Baixo/imagemtest.png",
-                IsPreferredProduct = false,
+                IsPreferredProduct = true,
                 InStock = true
             };
             Product Baixo04 = new Product
@@ -450,7 +450,7 @@ namespace BatidaPerfeita.Context
                 Price = 1899.90m,
                 ImageUrl = "img/Violao/imagemtest.png",
                 ImageThumbnailUrl = "img/Violao/imagemtest.png",
-                IsPreferredProduct = false,
+                IsPreferredProduct = true,
                 InStock = true
             };
             Product Violao02 = new Product
@@ -464,7 +464,7 @@ namespace BatidaPerfeita.Context
                 Price = 3299.90m,
                 ImageUrl = "img/Violao/imagemtest.png",
                 ImageThumbnailUrl = "img/Violao/imagemtest.png",
-                IsPreferredProduct = false,
+                IsPreferredProduct = true,
                 InStock = true
             };
             Product Violao03 = new Product
@@ -478,7 +478,7 @@ namespace BatidaPerfeita.Context
                 Price = 7499.90m,
                 ImageUrl = "img/Violao/imagemtest.png",
                 ImageThumbnailUrl = "img/Violao/imagemtest.png",
-                IsPreferredProduct = false,
+                IsPreferredProduct = true,
                 InStock = true
             };
             Product Violao04 = new Product
