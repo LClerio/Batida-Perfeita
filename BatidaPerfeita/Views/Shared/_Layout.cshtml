@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,19 +25,38 @@
                         
                     </ul>
                     <ul class="navbar-nav">
-                        @* Chamada profissional do ViewComponent *@
-                        @await Component.InvokeAsync("Search")
+                        <li class="nav-item d-flex align-items-center">
+                            @await Component.InvokeAsync("Search")
+                        </li>
                         @await Html.PartialAsync("_LoginPartial")
-
-                        @if (User.IsInRole("Admin")) 
+                        @if (User.IsInRole("Admin") || User.IsInRole("SuperAdmin")) 
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="Admin" asp-controller="Admin" asp-action="Index">Admin</a>
+                            <li class="nav-item dropdown me-2 mt-3">
+                                <a class="nav-link dropdown-toggle text-light" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-gear-fill me-1"></i> Painel
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="adminDropdown">
+                                    <li>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Admin" asp-action="Index">
+                                            <i class="bi bi-speedometer2 me-2"></i>Admin Geral
+                                        </a>
+                                    </li>
+                                    @if (User.IsInRole("SuperAdmin"))
+                                    {
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li>
+                                            <a class="dropdown-item text-warning" asp-area="Admin" asp-controller="SuperAdmin" asp-action="Index">
+                                                <i class="bi bi-shield-lock me-2"></i>SuperAdmin
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
                             </li>
-                        }
-)
+                        })
 
-                        @await Component.InvokeAsync("CartSummary")
+                        <li class="nav-item">
+                            @await Component.InvokeAsync("CartSummary")
+                        </li>
 
                     </ul>
                 </div>

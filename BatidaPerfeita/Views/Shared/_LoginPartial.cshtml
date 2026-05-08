@@ -5,7 +5,7 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item d-flex align-items-center">
-            <span class="text-light me-2">Olá, @User.Identity.Name!</span>
+            <span class="text-light me-2 mt-3">Olá, @User.Identity.Name!</span>
             <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
                 <button type="submit" class="btn btn-link nav-link text-light py-0" style="text-decoration:none">
                     Sair

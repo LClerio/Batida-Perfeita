@@ -9,8 +9,11 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
 
 
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -19,12 +22,11 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connect
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 {
-    // Configurações para aceitar senhas fracas em ambiente de teste
     options.Password.RequireDigit = false;
     options.Password.RequireLowercase = false;
     options.Password.RequireUppercase = false;
     options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequiredLength = 3; // Define o tamanho mínimo (ex: 3 caracteres)
+    options.Password.RequiredLength = 3;
     options.Password.RequiredUniqueChars = 0;
 })
     .AddEntityFrameworkStores<AppDbContext>()
@@ -41,11 +43,14 @@ builder.Services.AddTransient<ISeedUserRoleInitial, SeedUserRoleInitial>();
 
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("Admin",
-        policy =>
-        {
-            policy.RequireRole("Admin");
-        });
+    options.AddPolicy("MemberOnly", policy =>
+        policy.RequireRole("Member"));
+
+    options.AddPolicy("AdminOnly", policy =>
+        policy.RequireRole("Admin", "SuperAdmin"));
+
+    options.AddPolicy("SuperAdminOnly", policy =>
+        policy.RequireRole("SuperAdmin"));
 });
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -63,17 +68,18 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.Seed();
+
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
+
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseSession();
-
-await app.SeedAsync();
 
 app.MapControllerRoute(
     name: "areas",
@@ -84,3 +90,13 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+void CriarPerfisUsuarios(WebApplication app)
+{
+    var scopedFactory = app.Services.GetService<IServiceScopeFactory>();
+    using (var scope = scopedFactory.CreateScope())
+    {
+        var service = scope.ServiceProvider.GetService<ISeedUserRoleInitial>();
+        service.SeedUsersAsync();
+        service.SeedRolesAsync();
+    }
+}

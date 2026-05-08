@@ -4,6 +4,7 @@ using BatidaPerfeita.Pagination;
 using BatidaPerfeita.Repositories.Interfaces;
 using BatidaPerfeita.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Threading.Tasks;
 
 namespace BatidaPerfeita.Controllers
@@ -20,11 +21,39 @@ namespace BatidaPerfeita.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index(string? categoryName, [FromQuery] PaginationParameters parameters)
+        public async Task<IActionResult> Index(string? categoryName, string? sortOrder, [FromQuery] PaginationParameters parameters)
         {
             var viewModel = await _productService
                 .GetProductsAsync(categoryName, parameters);
 
+            // ordenação
+            viewModel.Products = sortOrder switch
+            {
+                "price_asc" => viewModel.Products.OrderBy(p => p.Price),
+
+                "price_desc" => viewModel.Products.OrderByDescending(p => p.Price),
+
+                _ => viewModel.Products
+            };
+
+            // salva opção selecionada
+            viewModel.SortOrder = sortOrder;
+
+            // opções do select
+            viewModel.SortOptions = new List<SelectListItem>
+    {
+        new SelectListItem
+        {
+            Value = "price_asc",
+            Text = "MENOR PREÇO"
+        },
+
+        new SelectListItem
+        {
+            Value = "price_desc",
+            Text = "MAIOR PREÇO"
+        }
+    };
             return View(viewModel);
         }
 
@@ -56,5 +85,6 @@ namespace BatidaPerfeita.Controllers
 
             return View("Index", productsVM);
         }
+
     }
 }

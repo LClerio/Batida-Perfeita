@@ -9,7 +9,7 @@ namespace BatidaPerfeita.Services
         private readonly RoleManager<IdentityRole> _roleManager;
 
         public SeedUserRoleInitial(UserManager<IdentityUser> userManager,
-                                   RoleManager<IdentityRole> roleManager)
+                                   RoleManager<IdentityRole> roleManager) 
         {
             _userManager = userManager;
             _roleManager = roleManager;
@@ -17,67 +17,62 @@ namespace BatidaPerfeita.Services
 
         public async Task SeedRolesAsync()
         {
-            // Criando Perfil de Membro
             if (!await _roleManager.RoleExistsAsync("Member"))
-            {
-                IdentityRole role = new IdentityRole();
-                role.Name = "Member";
-                role.NormalizedName = "MEMBER";
-                await _roleManager.CreateAsync(role);
-            }
+                await _roleManager.CreateAsync(new IdentityRole("Member"));
 
-            // Criando Perfil de Admin
             if (!await _roleManager.RoleExistsAsync("Admin"))
-            {
-                IdentityRole role = new IdentityRole();
-                role.Name = "Admin";
-                role.NormalizedName = "ADMIN";
-                await _roleManager.CreateAsync(role);
-            }
+                await _roleManager.CreateAsync(new IdentityRole("Admin"));
+
+            if (!await _roleManager.RoleExistsAsync("SuperAdmin"))
+                await _roleManager.CreateAsync(new IdentityRole("SuperAdmin"));
         }
 
         public async Task SeedUsersAsync()
         {
-            // Seed Usuário Comum
             if (await _userManager.FindByEmailAsync("usuario@localhost") == null)
             {
-                IdentityUser user = new IdentityUser
+                var user = new IdentityUser
                 {
-                    UserName = "usuario@localhost",
+                    UserName = "Usuario",
                     Email = "usuario@localhost",
-                    NormalizedUserName = "USUARIO@LOCALHOST",
-                    NormalizedEmail = "USUARIO@LOCALHOST",
-                    EmailConfirmed = true,
-                    LockoutEnabled = false,
-                    SecurityStamp = Guid.NewGuid().ToString()
+                    EmailConfirmed = true
                 };
 
-                IdentityResult result = await _userManager.CreateAsync(user, "Numsey#2022");
+                var result = await _userManager.CreateAsync(user, "Test@321");
 
                 if (result.Succeeded)
-                {
                     await _userManager.AddToRoleAsync(user, "Member");
-                }
             }
 
-            // Seed Administrador
             if (await _userManager.FindByEmailAsync("admin@localhost") == null)
             {
-                IdentityUser user = new IdentityUser
+                var user = new IdentityUser
                 {
-                    UserName = "admin@localhost",
+                    UserName = "Admin",
                     Email = "admin@localhost",
-                    NormalizedUserName = "ADMIN@LOCALHOST",
-                    NormalizedEmail = "ADMIN@LOCALHOST",
-                    EmailConfirmed = true,
-                    LockoutEnabled = false,
-                    SecurityStamp = Guid.NewGuid().ToString()
+                    EmailConfirmed = true
                 };
 
-                IdentityResult result = await _userManager.CreateAsync(user, "Numsey#2022");
+                var result = await _userManager.CreateAsync(user, "Admin#321");
+
+                if (result.Succeeded)
+                    await _userManager.AddToRoleAsync(user, "Admin");
+            }
+
+            if (await _userManager.FindByEmailAsync("superadmin@localhost") == null)
+            {
+                var user = new IdentityUser
+                {
+                    UserName = "SuperAdmin",
+                    Email = "superadmin@localhost",
+                    EmailConfirmed = true
+                };
+
+                var result = await _userManager.CreateAsync(user, "SuperAdmin#321");
 
                 if (result.Succeeded)
                 {
+                    await _userManager.AddToRoleAsync(user, "SuperAdmin");
                     await _userManager.AddToRoleAsync(user, "Admin");
                 }
             }

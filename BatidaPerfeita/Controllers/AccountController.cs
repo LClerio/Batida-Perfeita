@@ -52,17 +52,26 @@ namespace BatidaPerfeita.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(LoginViewModel registroVM)
+        public async Task<IActionResult> Register(RegisterViewModel registroVM)
         {
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = registroVM.UserName };
+                var user = new IdentityUser
+                { 
+                    UserName = registroVM.UserName,
+                    Email = registroVM.Email,
+                    EmailConfirmed = true,
+                };
                 var result = await _userManager.CreateAsync(user, registroVM.Password);
 
                 if (result.Succeeded)
                 {
                     await _userManager.AddToRoleAsync(user, "Member");
-                    return RedirectToAction("Login", "Account");
+
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("Index", "Home");
+
+                    //return RedirectToAction("Login", "Account");
                 }
 
                 foreach (var error in result.Errors)

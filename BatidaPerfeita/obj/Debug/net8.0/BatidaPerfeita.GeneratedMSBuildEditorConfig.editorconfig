@@ -38,6 +38,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/temp/ws-ASP.NET/Portfolio/Loja Virtual com ASP.NET Core MVC e Identity/BatidaPerfeita/Areas/Admin/Views/SuperAdmin/AddUserToRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3VwZXJBZG1pblxBZGRVc2VyVG9Sb2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/temp/ws-ASP.NET/Portfolio/Loja Virtual com ASP.NET Core MVC e Identity/BatidaPerfeita/Areas/Admin/Views/SuperAdmin/CreateRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3VwZXJBZG1pblxDcmVhdGVSb2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/temp/ws-ASP.NET/Portfolio/Loja Virtual com ASP.NET Core MVC e Identity/BatidaPerfeita/Areas/Admin/Views/SuperAdmin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3VwZXJBZG1pblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/temp/ws-ASP.NET/Portfolio/Loja Virtual com ASP.NET Core MVC e Identity/BatidaPerfeita/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

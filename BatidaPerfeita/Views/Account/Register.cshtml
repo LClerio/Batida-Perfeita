@@ -1,4 +1,4 @@
-﻿@model LoginViewModel
+﻿@model RegisterViewModel
 
 <div class="container mt-5">
     <div class="row justify-content-center">
@@ -26,10 +26,22 @@
                                     <span asp-validation-for="UserName" class="text-danger small"></span>
                                 </div>
 
+                                <div class="form-floating mb-3">
+                                    <input asp-for="Email" class="form-control" placeholder="Email" />
+                                    <label asp-for="Email">E-mail</label>
+                                    <span asp-validation-for="Email" class="text-danger small"></span>
+                                </div>
+
                                 <div class="form-floating mb-4">
                                     <input asp-for="Password" type="password" class="form-control" placeholder="Senha" />
                                     <label asp-for="Password">Senha</label>
                                     <span asp-validation-for="Password" class="text-danger small"></span>
+                                </div>
+
+                                <div class="form-floating mb-4">
+                                    <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Senha" />
+                                    <label asp-for="ConfirmPassword">Confirme a Senha</label>
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
                                 </div>
 
                                 <div class="d-grid">
@@ -51,3 +63,8 @@
         </div>
     </div>
 </div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

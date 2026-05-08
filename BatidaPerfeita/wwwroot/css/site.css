@@ -75,3 +75,12 @@ body {
     border-radius: 30px;
     overflow: hidden;
 }
+
+.text-truncate-name {
+    display: inline-block;
+    max-width: 120px; /* Você define o tamanho máximo em pixels */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Aqui acontece a mágica do "..." */
+    vertical-align: middle;
+}

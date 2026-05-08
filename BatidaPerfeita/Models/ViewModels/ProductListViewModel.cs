@@ -1,4 +1,6 @@
-﻿namespace BatidaPerfeita.Models.ViewModels
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace BatidaPerfeita.Models.ViewModels
 {
     public class ProductListViewModel
     {
@@ -6,7 +8,9 @@
         public IEnumerable<Category> Categories { get; set; } = new List<Category>();
         public string CurrentCategory { get; set; } = string.Empty;
         public string SelectCategory { get; set; } = string.Empty;
-        public string Name { get; set; } = string.Empty;
+        public string SortOrder { get; set; }
+
+        public IEnumerable<SelectListItem> SortOptions { get; set; }
 
         public int PageNumber { get; set; } = 1;
         public int PageSize { get; set; }

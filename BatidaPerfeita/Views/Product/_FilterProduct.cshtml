@@ -4,13 +4,17 @@
     <div>
 
         <div class="mb-3">
-            <label class="form-label fw-semibold text-dark">Nome</label>
+            <label class="form-label fw-semibold text-dark">Ordernar Por</label>
+            <form method="get">
+                <select asp-for="SortOrder"
+                        asp-items="Model.SortOptions"
+                        class="form-select shadow-sm rounded-3"
+                        onchange="this.form.submit()">
 
-            <select asp-for="Name"
-                    asp-items="@(new SelectList(Model.Products, "Name", "Name"))"
-                    class="form-select shadow-sm rounded-3">
-                <option value="">Selecionar</option>
-            </select>
+                    <option value="">Selecione</option>
+                </select>
+            </form>
+
         </div>
 
     </div>
