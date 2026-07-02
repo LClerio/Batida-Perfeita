@@ -1,0 +1,23 @@
+﻿@model ProfileViewModel
+
+<div class="cc-card-body">
+    <div class="cc-linha d-flex justify-content-between align-items-center py-2 border-bottom">
+        <div>
+            <small class="text-muted d-block font-monospace text-uppercase" style="font-size: 0.75rem;">Usuário Atual</small>
+            <span class="cc-label fw-semibold text-dark">@Model.UserName</span>
+        </div>
+        <a asp-controller="Account" asp-action="ChangeUser" class="btn btn-sm btn-outline-secondary px-3">
+            Trocar Usuário
+        </a>
+    </div>
+
+    <div class="cc-linha d-flex justify-content-between align-items-center py-2 mt-3">
+        <div>
+            <small class="text-muted d-block font-monospace text-uppercase" style="font-size: 0.75rem;">E-mail Atual</small>
+            <span class="cc-label fw-semibold text-dark">@Model.Email</span>
+        </div>
+        <a asp-controller="Account" asp-action="ChangeEmail" class="btn btn-sm btn-outline-secondary px-3">
+            Trocar e-mail
+        </a>
+    </div>
+</div>

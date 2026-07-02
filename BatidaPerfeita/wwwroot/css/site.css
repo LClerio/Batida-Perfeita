@@ -48,21 +48,21 @@ body {
         letter-spacing: 1px;
     }
 
-/* Ajusta as setas para ficarem fora dos cards e visíveis */
+
 .carousel-control-prev, .carousel-control-next {
     width: 5%;
-    filter: invert(100%); /* Torna as setas escuras se o fundo for claro */
+    filter: invert(100%);
 }
 
 .carousel-control-prev {
-    left: -50px; /* Joga a seta um pouco para fora do container */
+    left: -50px;
 }
 
 .carousel-control-next {
     right: -50px;
 }
 
-/* Garante que o container tenha espaço para as setas */
+
 .carousel {
     padding: 0 40px;
 }
@@ -78,9 +78,64 @@ body {
 
 .text-truncate-name {
     display: inline-block;
-    max-width: 120px; /* Você define o tamanho máximo em pixels */
+    max-width: 120px;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* Aqui acontece a mágica do "..." */
+    text-overflow: ellipsis;
     vertical-align: middle;
+}
+
+.cc-card {
+    background-color: #ffffff;
+    border: 1px solid #e3e6e8;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cc-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.cc-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1c1e21;
+    margin: 0;
+}
+
+.cc-link-gerenciamento {
+    color: #1877f2;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+    .cc-link-gerenciamento:hover {
+        opacity: 0.8;
+        text-decoration: underline;
+    }
+
+.cc-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.cc-label {
+    color: #65676b;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.cc-valor {
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: right;
 }
