@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BatidaPerfeita")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7537c2879bc588b21f94ebc3f9d75d2c5a371302")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d53bc1cf47f79e5e5266d0a9f284a0d767d7c25")]
 [assembly: System.Reflection.AssemblyProductAttribute("BatidaPerfeita")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BatidaPerfeita")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

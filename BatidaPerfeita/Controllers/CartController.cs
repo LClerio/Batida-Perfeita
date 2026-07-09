@@ -69,6 +69,13 @@ namespace BatidaPerfeita.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Checkout()
+        {
+            string cartId = HttpContext.Session.GetString("CartId");
+            _cartRepository.ClearCart(cartId);
+            return View();
+        }
+
         private string GetOrCreateCartId()
         {
             var session = HttpContext.Session;
