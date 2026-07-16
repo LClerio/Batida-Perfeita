@@ -16,9 +16,10 @@ builder.Services.AddControllersWithViews();
 
 
 
-var connection = builder.Configuration.GetConnectionString("DefaultConnection");
+string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connection));
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 {
@@ -75,11 +76,11 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
+app.UseSession();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseSession();
 
 app.MapControllerRoute(
     name: "areas",
